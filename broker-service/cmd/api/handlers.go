@@ -33,6 +33,7 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 	err := app.readJSON(w, r, requestPayload)
 	if err != nil {
 		app.errorJSON(w, err)
+		return
 	}
 
 	switch requestPayload.Action {
